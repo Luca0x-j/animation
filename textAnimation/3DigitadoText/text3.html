@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Digital Text</title>
+    <style>
+                * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #212121;
+            color: #fff;
+        }
+
+        .text-animation {
+            font-size: 45px;
+            font-weight: 300;
+        }
+
+        .text-animation span {
+            position: relative;
+        }
+
+        .text-animation span::before {
+            content: '';
+            color: #01fe87;
+            animation: alteretionText 20s infinite;
+        }
+
+        .text-animation span::after {
+            content: '';
+            position: absolute;
+            height: 100%;
+            border-left: 2px solid #01fe87;
+            right: -10px;
+            opacity: 1;
+            animation: cursor .8s infinite, Digita 20s steps(15) infinite;
+            width: calc(100% + 15px);
+            background: #212121;
+        }
+
+        @keyframes Digita {
+            10%,15%,30%,35%,50%,55%,70%,75%,90%,95% {
+                width: 0;
+            }
+            5%,20%,25%,40%,45%,60%,65%,80%,85% {
+                width: calc(100% + 15px);
+            }
+        }
+
+        @keyframes cursor {
+            0% {
+                border-left: 2px solid #212121;
+
+            }
+        }
+
+        @keyframes alteretionText {
+            0%,20% {
+                content: 'e Muito Bom!';
+            }
+            21%,40% {
+                content: 'Amar Programar?';
+            }
+            41%,60% {
+                content: 'Vai Consegue';
+            }
+            61%,80% {
+                content: 'Não tem Escolhas';
+            }
+            81%,100% {
+                content: 'vs Você';
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="text-animation">Você 
+        <span></span>
+    </div>
+</body>
+</html>
